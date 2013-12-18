@@ -13,7 +13,8 @@ class List<E> implements Iterator
     int position = 0;
     
     @Override
-    public boolean hasNext() {
+    public boolean hasNext() 
+    {
         if (this.position >= this.itens.size() || this.itens.get(this.position) == null){
             return false;
         }
@@ -23,8 +24,9 @@ class List<E> implements Iterator
     }
 
     @Override
-    public Object getNext() {
-        return this.itens.get(this.position);
+    public Object getNext() 
+    {
+        return this.itens.get(this.position++);
     }
 
     public void adicionar(E item) 

@@ -14,6 +14,7 @@ public class Gerenciador<E>
     /**
      *
      * @param itens
+     * @param ordenacao
      */
     public Gerenciador(List<E> itens, Sort ordenacao) 
     {
@@ -36,9 +37,9 @@ public class Gerenciador<E>
         while (this.itens.hasNext())
         {
             Item item = (Item) this.itens.getNext();
-            if (item.getNome() == nomeItem)
+            if (item.getNome().equals(nomeItem))
             {
-                return item.getPreco();
+                return (float) item.getPreco();
             }
         }
         

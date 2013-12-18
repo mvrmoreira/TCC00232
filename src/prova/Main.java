@@ -1,6 +1,8 @@
 
 package prova;
 
+import java.util.Scanner;
+
 /**
  *
  * @author moreira
@@ -18,6 +20,22 @@ public class Main {
         
         Sort ordenacao = new BubbleSort(new ComparadorItem());
         Gerenciador<Item> gerenciador = new Gerenciador<>(itens, ordenacao);
+        
+        gerenciador.cadastraItem("carro");        
+        
+        Scanner s = new Scanner(System.in);
+        System.out.println("Digite o nome do item: ");
+        String nomeItem = s.nextLine();
+        
+        try 
+        {            
+            float preco = gerenciador.consultaPreco(nomeItem);
+            System.out.println("Preço do item: " + preco);
+        } 
+        catch (Exception ex) 
+        {
+            System.out.println("Item não encontrado!");
+        }
     }
     
 }
