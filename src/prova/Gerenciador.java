@@ -22,6 +22,11 @@ public class Gerenciador<E>
         this.ordenacao = ordenacao;
     }
     
+    public void ordena()
+    {
+        this.ordenacao.ordena(this.itens);
+    }
+    
     /**
      * @param tipo 
      */
