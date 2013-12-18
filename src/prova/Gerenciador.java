@@ -22,9 +22,19 @@ public class Gerenciador<E>
         this.ordenacao = ordenacao;
     }
     
-    public void ordena()
+    public void ordenaItens()
     {
         this.ordenacao.ordena(this.itens);
+    }
+    
+    public void imprimeItens()
+    {
+        this.itens.resetPosition();
+        while (itens.hasNext())
+        {
+            Item item = (Item) this.itens.getNext();
+            System.out.println(item.getNome() + " - R$ " + item.getPreco());
+        }
     }
     
     /**
@@ -39,6 +49,7 @@ public class Gerenciador<E>
     
     public float consultaPreco(String nomeItem) throws Exception
     {
+        this.itens.resetPosition();
         while (this.itens.hasNext())
         {
             Item item = (Item) this.itens.getNext();

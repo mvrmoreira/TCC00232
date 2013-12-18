@@ -12,9 +12,34 @@ public class BubbleSort extends Sort
         this.comparador = comparador;
     }    
 
+    /**
+     *
+     * @param l
+     */
     @Override
     public void ordena(List l)
     {
-        System.out.println("Ordena itens com bubble sort.");
+        boolean trocou = true;
+        Object currentItem, nextItem;
+        
+        while (trocou)
+        {
+            trocou = false;
+            l.resetPosition();
+            currentItem = l.getNext();
+            while (l.hasNext())
+            {
+                nextItem = l.getNext();
+                if (this.comparador.compara(currentItem, nextItem) > 0)
+                {
+                    l.trocaItens(nextItem, currentItem);
+                    trocou = true;
+                }
+                else
+                {
+                    currentItem = nextItem;
+                }
+            }
+        }
     }    
 }

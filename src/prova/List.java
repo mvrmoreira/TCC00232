@@ -32,5 +32,16 @@ class List<E> implements Iterator
     public void adicionar(E item) 
     {
         this.itens.add(item);
-    }    
+    }
+    
+    public void resetPosition()
+    {
+        this.position = 0;
+    }
+    
+    public void trocaItens(E previousItem, E currentItem)
+    {
+        this.itens.set(this.position - 2, previousItem);
+        this.itens.set(this.position - 1, currentItem);
+    }
 }
