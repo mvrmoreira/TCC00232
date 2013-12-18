@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package prova;
 
@@ -12,7 +7,6 @@ package prova;
  */
 public class ComparadorItem implements Comparador<Item>
 {
-
     @Override
     public int compara(Item one, Item two) 
     {
@@ -28,6 +22,5 @@ public class ComparadorItem implements Comparador<Item>
         {
             return 1;
         }
-    }
-    
+    }    
 }

@@ -15,13 +15,13 @@ public class Gerenciador<E>
      *
      * @param itens
      */
-    public Gerenciador(List<E> itens) 
+    public Gerenciador(List<E> itens, Sort ordenacao) 
     {
         this.itens = itens;
+        this.ordenacao = ordenacao;
     }
     
     /**
-     * terminar aqui
      * @param tipo 
      */
     public void cadastraItem(String tipo)
@@ -35,8 +35,11 @@ public class Gerenciador<E>
     {
         while (this.itens.hasNext())
         {
-            E item = (E) this.itens.getNext();
-            // terminar aqui
+            Item item = (Item) this.itens.getNext();
+            if (item.getNome() == nomeItem)
+            {
+                return item.getPreco();
+            }
         }
         
         throw new Exception("Item não encontrado!");

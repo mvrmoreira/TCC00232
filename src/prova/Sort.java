@@ -9,5 +9,5 @@ public abstract class Sort
 {
     protected Comparador comparador;
     
-    public abstract void ordena();
+    public abstract void ordena(List l);
 }
